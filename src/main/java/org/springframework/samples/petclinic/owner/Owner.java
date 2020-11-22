@@ -59,6 +59,11 @@ public class Owner extends Person {
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
 
+	@Column(name = "age")
+	@NotEmpty
+	@Digits(fraction = 0, integer = 3)
+	private String age;
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets;
 
@@ -84,6 +89,13 @@ public class Owner extends Person {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	public String getAge() {
+		return this.age;
+	}
+	public void setAge(String age) {
+		this.age = age;
 	}
 
 	protected Set<Pet> getPetsInternal() {
@@ -142,7 +154,7 @@ public class Owner extends Person {
 	public String toString() {
 		return new ToStringCreator(this)
 
-				.append("id", this.getId()).append("new", this.isNew()).append("lastName", this.getLastName())
+				.append("id", this.getId()).append("new", this.isNew()).append("firstName", this.getFirstName())
 				.append("firstName", this.getFirstName()).append("address", this.address).append("city", this.city)
 				.append("telephone", this.telephone).toString();
 	}
