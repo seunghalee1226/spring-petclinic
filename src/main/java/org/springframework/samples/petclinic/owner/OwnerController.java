@@ -94,6 +94,7 @@ class OwnerController {
 			result.rejectValue("firstName", "notFound", "not found");
 			return "owners/findOwners";
 		}
+
 		else if (results.size() == 1) {
 			// 1 owner found
 			owner = results.iterator().next();

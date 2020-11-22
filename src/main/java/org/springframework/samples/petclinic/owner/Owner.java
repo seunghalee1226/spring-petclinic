@@ -94,6 +94,7 @@ public class Owner extends Person {
 	public String getAge() {
 		return this.age;
 	}
+
 	public void setAge(String age) {
 		this.age = age;
 	}
